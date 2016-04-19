@@ -73,6 +73,7 @@ default_pspeed = 0.0
 
 default_pmaxspeed = 10.0
 
+default_pminspeed = -5.0
 
 default_paccelv = 1.0
 
@@ -367,6 +368,7 @@ while running:
 				pangle = default_pangle
 				pspeed = default_pspeed
 				pmaxspeed = default_pmaxspeed
+				pminspeed = default_pminspeed
 				paccelv = default_paccelv
 				pdecelv = default_pdecelv
 				paccel = default_paccel
@@ -458,8 +460,8 @@ while running:
 				pspeed = pmaxspeed
 		elif pdecel and not paccel:
 			pspeed = pspeed - pdecelv
-			if pspeed < 0:
-				pspeed = 0
+			if pspeed < pminspeed: # reverse!
+                                pspeed = pminspeed
 		if pport and not pstarboard:
 			pangle -= pangulaccel
 		elif pstarboard and not pport:
