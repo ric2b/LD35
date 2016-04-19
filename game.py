@@ -507,7 +507,7 @@ while running:
 
 
 	# Framerate limiting
-	clock.tick(30)
+	clock.tick(60)
 	
 	# Placing the game field on screen
 	scale = min(int(pxwidth*1.0/(1.0*gamewidth)),int(pxheight*1.0/(1.0*gameheight)))
